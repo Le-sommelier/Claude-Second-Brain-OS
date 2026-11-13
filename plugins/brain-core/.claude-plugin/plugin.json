@@ -1,0 +1,8 @@
+{
+  "name": "brain-core",
+  "version": "0.1.0",
+  "description": "Required core of claude-second-brain-os: setup wizard, doctor, the brain CLI, the knowledge-base index, project/topic/person scaffolding, session hooks, workspace rules and PM personas.",
+  "author": { "name": "Claude-Second-Brain-OS contributors" },
+  "license": "MIT",
+  "keywords": ["product-management", "second-brain", "knowledge-base"]
+}

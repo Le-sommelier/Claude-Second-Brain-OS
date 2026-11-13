@@ -1,0 +1,23 @@
+{
+  "module": "brain-ingest-confluence",
+  "requires": ["brain-core"],
+  "connectors": [
+    {"name": "Atlassian (Confluence)", "why": "search and read watched Confluence pages (read-only)", "required": true}
+  ],
+  "paths": {
+    "confluence": {
+      "root": "raw/confluence",
+      "state": "system/run/confluence-state.json",
+      "watch": ".claude/brain/confluence-watch.json"
+    }
+  },
+  "folders": ["raw/confluence"],
+  "templates": [
+    {"from": "templates/confluence-watch.json", "to": ".claude/brain/confluence-watch.json"}
+  ],
+  "bricks": [
+    {"stage": "fetch", "lane": "atlassian", "brick": "brain-ingest-confluence:ingest-confluence", "model": "haiku"}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

@@ -1,0 +1,17 @@
+{
+  "channel_name": "#proj-checkout",
+  "channel_id": "C0FERN0001",
+  "date": "2026-11-03",
+  "messages": [
+    {
+      "ts": "1793700000.000900",
+      "user_name": "Sam Patel",
+      "text": "[two links to the staging dashboards]"
+    },
+    {
+      "ts": "1793700300.000901",
+      "user_name": "Jordan Lee",
+      "text": "Updated the specs, see the thread for the rest..."
+    }
+  ]
+}

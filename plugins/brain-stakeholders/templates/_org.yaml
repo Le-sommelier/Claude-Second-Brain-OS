@@ -1,0 +1,6 @@
+# Org chart. Manager is a person id. Edit freely: scripts only add records, never rewrite yours.
+people:
+  - id: {{OWNER_PERSON_ID}}
+    name: {{OWNER_NAME}}
+    role: {{OWNER_ROLE}}
+    status: active

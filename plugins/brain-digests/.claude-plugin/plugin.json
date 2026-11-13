@@ -1,0 +1,7 @@
+{
+  "name": "brain-digests",
+  "version": "0.1.0",
+  "description": "Weekly and monthly digests built from your summaries and project logs, with an approval-gated publish step.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

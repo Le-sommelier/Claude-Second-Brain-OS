@@ -1,0 +1,9 @@
+{
+  "_comment": "Your company values, used to tag evidence (values_evidenced) and to write the values paragraph of a self-review. Replace with your own. Fernhill example.",
+  "values": [
+    {"id": "customers-first", "name": "Customers first", "prompt": "Describe a time you changed a decision because of what a customer told you.", "keywords": ["customer", "user research", "interview", "support"]},
+    {"id": "own-the-outcome", "name": "Own the outcome", "prompt": "Where did you take responsibility for a result beyond your remit?", "keywords": ["owned", "accountable", "risk", "escalated"]},
+    {"id": "ship-small", "name": "Ship small, learn fast", "prompt": "What did you release early to learn something?", "keywords": ["pilot", "increment", "flag", "slice", "experiment"]},
+    {"id": "lift-others", "name": "Lift others", "prompt": "Who is better at their job because of you?", "keywords": ["coached", "thanked", "credited", "onboarded"]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "channel_name": "#product-team",
+  "channel_id": "C0FERN0003",
+  "date": "2026-11-05",
+  "messages": [
+    {
+      "ts": "1793868600.000100",
+      "user_name": "Casey Nguyen",
+      "text": "Anyone have a good template for a one-page opportunity brief? Happy to share mine once it is done."
+    },
+    {
+      "ts": "1793895000.000200",
+      "user_name": "Morgan Diaz",
+      "text": "Reminder: planning for the next half opens next Monday. Please have your top three bets in the planning doc by then.",
+      "reactions": [
+        {
+          "name": "thumbsup",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Local-only material: leak denylist, scratch. Never commit.
+.local/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets — the workspace keeps them in a git-ignored env file
+*.env
+!example.env
+!*.example.env
+
+# Generated indexes / databases inside the sample workspace
+examples/**/system/kb.db
+examples/**/*.db

@@ -1,0 +1,10 @@
+{
+  "_comment": "Channels the ingest watches. name: with the leading #. id: Slack channel ID (leave empty and the brick resolves it). tags: free labels copied into frontmatter. sensitivity: 'confidential' stores the file inside CONFIDENTIAL markers (names matching .claude/brain.json -> confidential.channel_patterns are treated as confidential even without it). transient: short-lived channel, exempt from the coverage check. tech_decisions: true when the channel regularly carries decisions the wiki should capture. Fictional example below: replace with your own.",
+  "channels": [
+    {"name": "#proj-checkout", "id": "C0FERN0001", "tags": ["checkout-revamp"], "sensitivity": "internal", "tech_decisions": true},
+    {"name": "#partner-api", "id": "C0FERN0002", "tags": ["partner-api"], "sensitivity": "internal", "tech_decisions": true},
+    {"name": "#product-team", "id": "C0FERN0003", "tags": ["team"], "sensitivity": "internal"},
+    {"name": "#product-leads", "id": "C0FERN0004", "tags": ["leadership"], "sensitivity": "confidential"},
+    {"name": "#partner-api-launch", "id": "C0FERN0005", "tags": ["partner-api"], "sensitivity": "internal", "transient": true}
+  ]
+}

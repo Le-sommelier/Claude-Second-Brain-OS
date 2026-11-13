@@ -1,0 +1,7 @@
+{
+  "name": "brain-ingest",
+  "version": "0.1.0",
+  "description": "The ingest orchestrator: plans the date window, runs every installed ingest brick in stages with catch-up, and writes the run log and memory observations.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

@@ -1,0 +1,20 @@
+{
+  "_comment": "Digest settings. projects: slugs to include (empty = every folder under projects/). tags_filter: only summaries carrying one of these tags (empty = all). publish.destination: none | confluence | slack | email. Publishing is always drafted first and needs your explicit yes per artifact.",
+  "projects": [],
+  "tags_filter": [],
+  "publish": {
+    "destination": "none",
+    "confluence": {
+      "space": "PROD",
+      "parent_page_id": "",
+      "title_template": "Weekly digest {period} (week ending {week_end})"
+    },
+    "slack": {
+      "channel": "#product-team"
+    },
+    "email": {
+      "to": ["riley.chen@fernhill.example"],
+      "subject_template": "Weekly digest {period}"
+    }
+  }
+}

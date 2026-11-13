@@ -1,0 +1,195 @@
+{
+  "_doc": "The ingest pipeline. Setup copies this to system/run/pipeline.json, then merges in the `bricks` of every installed module (brain.module.json). Stages run in order. In a 'lanes' stage the lanes run in parallel and the bricks inside a lane run in sequence; 'steps' run in sequence unless 'parallel' is true. A brick is a skill (spawned as a subagent on its 'model') or a script (a 'script' path, run directly; it prints a contract return). Per-brick flags: enabled (default true), per_date (one run per date in the window), affects_status (default true). Install or remove a module and re-run /brain-core:setup to change the bricks; edit 'enabled' by hand to pause one.",
+  "_version": "1.0",
+  "settings": {
+    "max_catchup_days": 14,
+    "flagged_lookback_days": 14,
+    "owed_lookback_days": 14,
+    "run_log_retention_days": 90
+  },
+  "stages": [
+    {
+      "id": "fetch",
+      "lanes": {
+        "slack": [
+          {
+            "brick": "brain-ingest-slack:ingest-slack-channels",
+            "model": "haiku",
+            "per_date": true
+          },
+          {
+            "brick": "brain-ingest-slack:ingest-slack-flagged",
+            "model": "haiku"
+          },
+          {
+            "brick": "brain-ingest-slack:ingest-owed-replies",
+            "model": "sonnet",
+            "enabled": false,
+            "affects_status": false
+          }
+        ],
+        "m365": [
+          {
+            "brick": "brain-ingest-teams:ingest-teams",
+            "model": "sonnet"
+          },
+          {
+            "brick": "brain-ingest-teams:ingest-meeting-files",
+            "model": "none",
+            "script": "skills/ingest-meeting-files/scripts/prepare.py",
+            "kind": "script",
+            "command": "python3 '../../plugins/brain-ingest-teams/skills/ingest-meeting-files/scripts/prepare.py'"
+          }
+        ],
+        "atlassian": [
+          {
+            "brick": "brain-ingest-confluence:ingest-confluence",
+            "model": "haiku"
+          }
+        ],
+        "notes": [
+          {
+            "brick": "brain-ingest-notes:ingest-notes",
+            "model": "none",
+            "script": "skills/ingest-notes/scripts/normalise.py",
+            "kind": "script",
+            "command": "python3 '../../plugins/brain-ingest-notes/skills/ingest-notes/scripts/normalise.py'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transform",
+      "steps": [
+        {
+          "brick": "brain-summarise:meeting-summarise",
+          "model": "haiku",
+          "per_date": false
+        }
+      ]
+    },
+    {
+      "id": "index",
+      "steps": [
+        {
+          "brick": "brain-core:kb-build",
+          "command": "brain kb build --as-brick brain-core:kb-build",
+          "model": "none"
+        },
+        {
+          "brick": "brain-core:kb-index",
+          "command": "brain kb index --as-brick brain-core:kb-index",
+          "model": "none",
+          "affects_status": false
+        }
+      ]
+    },
+    {
+      "id": "derive",
+      "parallel": true,
+      "steps": [
+        {
+          "brick": "brain-summarise:todo-extract",
+          "model": "sonnet",
+          "per_date": false
+        },
+        {
+          "brick": "brain-wiki:wiki-update",
+          "model": "sonnet",
+          "per_date": false
+        },
+        {
+          "brick": "brain-stakeholders:one-on-ones",
+          "model": "sonnet",
+          "per_date": false
+        }
+      ]
+    },
+    {
+      "id": "finalise",
+      "steps": [
+        {
+          "brick": "brain-core:kb-rebuild",
+          "command": "brain kb build --as-brick brain-core:kb-rebuild",
+          "model": "none",
+          "affects_status": false,
+          "_doc": "Second build after derive: picks up the entries wiki-update and the other derive bricks appended this run."
+        },
+        {
+          "brick": "brain-core:kb-reindex",
+          "command": "brain kb index --as-brick brain-core:kb-reindex",
+          "model": "none",
+          "affects_status": false
+        },
+        {
+          "brick": "brain-core:kb-attention",
+          "command": "brain kb attention --as-brick brain-core:kb-attention",
+          "model": "none",
+          "affects_status": false
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "brain-core": {
+      "root": "../../plugins/brain-core",
+      "version": "0.1.0"
+    },
+    "brain-ingest": {
+      "root": "../../plugins/brain-ingest",
+      "version": "0.1.0"
+    },
+    "brain-ingest-slack": {
+      "root": "../../plugins/brain-ingest-slack",
+      "version": "0.1.0"
+    },
+    "brain-ingest-teams": {
+      "root": "../../plugins/brain-ingest-teams",
+      "version": "0.1.0"
+    },
+    "brain-ingest-confluence": {
+      "root": "../../plugins/brain-ingest-confluence",
+      "version": "0.1.0"
+    },
+    "brain-ingest-notes": {
+      "root": "../../plugins/brain-ingest-notes",
+      "version": "0.1.0"
+    },
+    "brain-summarise": {
+      "root": "../../plugins/brain-summarise",
+      "version": "0.1.0"
+    },
+    "brain-wiki": {
+      "root": "../../plugins/brain-wiki",
+      "version": "0.1.0"
+    },
+    "brain-digests": {
+      "root": "../../plugins/brain-digests",
+      "version": "0.1.0"
+    },
+    "brain-growth": {
+      "root": "../../plugins/brain-growth",
+      "version": "0.1.0"
+    },
+    "brain-mentoring": {
+      "root": "../../plugins/brain-mentoring",
+      "version": "0.1.0"
+    },
+    "brain-stakeholders": {
+      "root": "../../plugins/brain-stakeholders",
+      "version": "0.1.0"
+    },
+    "brain-learning-loop": {
+      "root": "../../plugins/brain-learning-loop",
+      "version": "0.1.0"
+    },
+    "brain-steal-list": {
+      "root": "../../plugins/brain-steal-list",
+      "version": "0.1.0"
+    },
+    "brain-grill": {
+      "root": "../../plugins/brain-grill",
+      "version": "0.1.0"
+    }
+  }
+}

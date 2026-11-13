@@ -1,0 +1,56 @@
+{
+  "_comment": "claude-second-brain-os workspace config. Written by /brain-core:setup; edit freely. Its presence marks the workspace root.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "Alex Morgan",
+    "first_name": "Alex",
+    "person_id": "alex-morgan",
+    "role": "Senior Product Manager",
+    "company": "Fernhill",
+    "timezone": "Europe/London",
+    "week_starts": "monday"
+  },
+  "modules": [
+    "brain-core",
+    "brain-ingest",
+    "brain-ingest-slack",
+    "brain-ingest-teams",
+    "brain-ingest-confluence",
+    "brain-ingest-notes",
+    "brain-summarise",
+    "brain-wiki",
+    "brain-digests",
+    "brain-growth",
+    "brain-mentoring",
+    "brain-stakeholders",
+    "brain-learning-loop",
+    "brain-steal-list",
+    "brain-grill"
+  ],
+  "confidential": {
+    "globs": [
+      "growth/**",
+      "growth/mentoring/**",
+      "growth/one-on-ones/**",
+      "people/_stakeholder-map.*"
+    ],
+    "channel_patterns": [
+      "*-leadership*",
+      "*-leads",
+      "*-lead-*",
+      "*-exec*",
+      "exec-*",
+      "leads-*"
+    ]
+  },
+  "models": {
+    "verbatim": "haiku",
+    "synthesis": "sonnet",
+    "judgement": "opus"
+  },
+  "publishing": {
+    "require_per_artifact_approval": true
+  },
+  "braincore_version": "0.1.0",
+  "modules_declined": []
+}

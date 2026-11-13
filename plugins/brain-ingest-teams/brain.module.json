@@ -1,0 +1,26 @@
+{
+  "module": "brain-ingest-teams",
+  "requires": ["brain-core"],
+  "connectors": [
+    {"name": "Microsoft 365", "why": "read calendar events and Teams meeting transcripts (read-only)", "required": false}
+  ],
+  "paths": {
+    "meetings": {
+      "root": "raw/meetings",
+      "inbox": "inbox/transcripts",
+      "teams_inbox": "inbox/transcripts/teams",
+      "processed": "inbox/transcripts/_processed",
+      "ledger": "system/run/teams-ledger.json"
+    }
+  },
+  "folders": ["raw/meetings", "inbox/transcripts", "inbox/transcripts/teams", "inbox/transcripts/_processed"],
+  "templates": [
+    {"from": "templates/teams.json", "to": ".claude/brain/teams.json"}
+  ],
+  "bricks": [
+    {"stage": "fetch", "lane": "m365", "brick": "brain-ingest-teams:ingest-teams", "model": "sonnet"},
+    {"stage": "fetch", "lane": "m365", "brick": "brain-ingest-teams:ingest-meeting-files", "model": "none", "script": "skills/ingest-meeting-files/scripts/prepare.py"}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

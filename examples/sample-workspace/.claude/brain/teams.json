@@ -1,0 +1,12 @@
+{
+  "_comment": "Settings for brain-ingest-teams. Edit freely; setup never overwrites this file.",
+  "default_lookback_days": 7,
+  "overlap_hours": 24,
+  "max_attempts": 4,
+  "retry_window_days": 5,
+  "occurrence_mismatch_tolerance_hours": 3,
+  "transcript_created_early_minutes": 10,
+  "transcript_created_late_minutes": 5,
+  "same_meeting_minutes": 10,
+  "extra_windows_tz": {"_example": "Windows zone name -> IANA name, e.g. \"Singapore Standard Time\": \"Asia/Singapore\""}
+}

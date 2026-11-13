@@ -1,0 +1,5 @@
+{
+  "_comment": "Who counts as a senior leader for the senior-tier-feedback pattern. The miner reads role titles from people/*.md and matches any role containing a keyword below; fallback_names covers people who have no page yet (full names). Fernhill example.",
+  "role_keywords": ["vp", "director", "head of", "chief"],
+  "fallback_names": []
+}

@@ -1,0 +1,15 @@
+{
+  "module": "brain-ingest",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {},
+  "folders": ["system/run", "system/run/payloads"],
+  "templates": [
+    {"from": "templates/pipeline.base.json", "to": "system/run/pipeline.json"}
+  ],
+  "bricks": [],
+  "scheduled": [
+    {"name": "brain-ingest-daily", "prompt": "scheduled/ingest-daily.md", "cron": "0 7 * * 1-5"}
+  ],
+  "confidential_globs": []
+}

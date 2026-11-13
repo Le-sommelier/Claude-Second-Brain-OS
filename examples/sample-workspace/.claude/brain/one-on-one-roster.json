@@ -1,0 +1,25 @@
+{
+  "_comment": "Whose 1:1s get drafted from meeting transcripts. person_id = the people/<id>.md page. patterns = lowercase fragments of the transcript file name (mtg-DATE-slug) that identify the meeting. relation = manager | report | peer. showCareer = true adds a 'career' section (use for your manager and reports only). Fernhill example.",
+  "people": [
+    {
+      "person_id": "casey-nguyen",
+      "person": "Casey Nguyen",
+      "relation": "report",
+      "showCareer": true,
+      "patterns": [
+        "casey-1-1",
+        "alex-casey"
+      ]
+    },
+    {
+      "person_id": "riley-chen",
+      "person": "Riley Chen",
+      "relation": "manager",
+      "showCareer": true,
+      "patterns": [
+        "riley-1-1",
+        "alex-riley"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "module": "brain-core",
+  "requires": [],
+  "connectors": [],
+  "paths": {},
+  "folders": [
+    "raw",
+    "projects",
+    "people",
+    "topics",
+    "digests",
+    "inbox",
+    "inbox/proposals",
+    "todos",
+    "system",
+    "system/schema",
+    "system/run",
+    "system/run/payloads",
+    ".claude/brain",
+    ".claude/rules",
+    ".claude/output-styles",
+    ".secrets"
+  ],
+  "templates": [],
+  "bricks": [
+    {
+      "stage": "index",
+      "brick": "brain-core:kb-build",
+      "command": "brain kb build --as-brick brain-core:kb-build",
+      "model": "none"
+    },
+    {
+      "stage": "index",
+      "brick": "brain-core:kb-index",
+      "command": "brain kb index --as-brick brain-core:kb-index",
+      "model": "none",
+      "affects_status": false
+    },
+    {
+      "stage": "finalise",
+      "brick": "brain-core:kb-rebuild",
+      "command": "brain kb build --as-brick brain-core:kb-rebuild",
+      "model": "none",
+      "affects_status": false,
+      "_doc": "Second build after derive: picks up the entries wiki-update and the other derive bricks appended this run."
+    },
+    {
+      "stage": "finalise",
+      "brick": "brain-core:kb-reindex",
+      "command": "brain kb index --as-brick brain-core:kb-reindex",
+      "model": "none",
+      "affects_status": false
+    },
+    {
+      "stage": "finalise",
+      "brick": "brain-core:kb-attention",
+      "command": "brain kb attention --as-brick brain-core:kb-attention",
+      "model": "none",
+      "affects_status": false
+    }
+  ],
+  "scheduled": [
+    {
+      "name": "brain-core-weekly-doctor",
+      "prompt": "scheduled/weekly-doctor.md",
+      "cron": "0 16 * * 5"
+    }
+  ],
+  "confidential_globs": [
+    "growth/**"
+  ]
+}

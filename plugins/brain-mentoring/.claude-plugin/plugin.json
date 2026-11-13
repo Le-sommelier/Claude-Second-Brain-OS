@@ -1,0 +1,9 @@
+{
+  "name": "brain-mentoring",
+  "version": "0.1.0",
+  "description": "Mentorships as mentor or mentee: set up, prep sessions, capture notes and actions, review progress. Confidential by default.",
+  "license": "MIT",
+  "dependencies": [
+    "brain-core"
+  ]
+}

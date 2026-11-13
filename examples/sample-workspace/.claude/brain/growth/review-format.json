@@ -1,0 +1,13 @@
+{
+  "_comment": "The format of YOUR review cycle's self-reflection. The self-review skill drafts one block per section, in this order. Edit the sections, prompts and word budgets to match your company's tool. Fernhill example (half-year check-in).",
+  "name": "Fernhill half-year self-reflection",
+  "cadence": "Mid-year and end-of-year (set your own months)",
+  "sections": [
+    {"id": "achievements", "title": "What went well", "words": [200, 350], "prompt": "What are you proudest of, and what changed because of it? Include the values paragraph.", "values_paragraph": true},
+    {"id": "challenges", "title": "What was hard", "words": [120, 250], "prompt": "One real challenge, what you learned, what you would do differently."},
+    {"id": "next", "title": "Looking ahead", "words": [100, 200], "prompt": "Focus areas for the next half, tied to your objectives."},
+    {"id": "other", "title": "Anything else", "words": [0, 100], "prompt": "Context the manager needs. Leave out if empty.", "optional": true}
+  ],
+  "extra_review_at_levels": [],
+  "framework_url": ""
+}

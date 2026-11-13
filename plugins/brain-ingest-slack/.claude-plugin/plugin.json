@@ -1,0 +1,7 @@
+{
+  "name": "brain-ingest-slack",
+  "version": "0.1.0",
+  "description": "Slack ingest bricks: watched channels, messages you flag with a reaction, and who you owe a reply. Read-only, verbatim, confidential-aware.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

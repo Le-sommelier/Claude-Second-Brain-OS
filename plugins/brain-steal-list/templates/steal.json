@@ -1,0 +1,7 @@
+{
+  "_comment": "Settings for the steal list. drive_inbox is optional: set it to a folder that your phone syncs screenshots into (Google Drive, iCloud, Dropbox) and the review will move new images from there into steal/inbox first. Leave it null to drop screenshots into steal/inbox yourself.",
+  "drive_inbox": null,
+  "purge_days": 14,
+  "targets": ["wiki", "artifact-tooling", "personal-tools", "strategy", "brain-work", "none"],
+  "setup_scan": [".claude/skills", ".claude/commands", ".claude/agents", ".claude/rules", ".claude/hooks"]
+}

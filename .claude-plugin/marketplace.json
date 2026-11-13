@@ -1,0 +1,84 @@
+{
+  "name": "claude-second-brain-os",
+  "description": "A modular second brain for product managers on Claude Code: ingest Slack, Teams, Confluence and notes; keep projects, stakeholders and growth in markdown; get digests, a learning loop and a nightly steal list.",
+  "owner": {
+    "name": "Claude-Second-Brain-OS contributors"
+  },
+  "plugins": [
+    {
+      "name": "brain-core",
+      "source": "./plugins/brain-core",
+      "description": "Required. Setup wizard, doctor, the brain CLI, the knowledge-base index, projects/topics/people scaffolding, hooks, rules and personas."
+    },
+    {
+      "name": "brain-ingest",
+      "source": "./plugins/brain-ingest",
+      "description": "The orchestrator: runs every installed ingest brick in stages, with catch-up and a run log."
+    },
+    {
+      "name": "brain-ingest-slack",
+      "source": "./plugins/brain-ingest-slack",
+      "description": "Slack: watched channels, messages you flag with a reaction, and who you owe a reply."
+    },
+    {
+      "name": "brain-ingest-teams",
+      "source": "./plugins/brain-ingest-teams",
+      "description": "Meetings: Teams transcripts fetched through the Microsoft 365 connector, plus VTT/TXT transcript drops."
+    },
+    {
+      "name": "brain-ingest-confluence",
+      "source": "./plugins/brain-ingest-confluence",
+      "description": "Confluence: watched spaces and pages, re-ingested when they change."
+    },
+    {
+      "name": "brain-ingest-notes",
+      "source": "./plugins/brain-ingest-notes",
+      "description": "Manual notes: drop markdown, text or pasted notes into an inbox and they join the pipeline."
+    },
+    {
+      "name": "brain-summarise",
+      "source": "./plugins/brain-summarise",
+      "description": "Meeting summaries with decisions and actions, plus todo extraction."
+    },
+    {
+      "name": "brain-wiki",
+      "source": "./plugins/brain-wiki",
+      "description": "Keeps project, people and topic pages current from the pending queue; ask questions, resolve contradictions, prune stale facts."
+    },
+    {
+      "name": "brain-digests",
+      "source": "./plugins/brain-digests",
+      "description": "Weekly and monthly digests, with an approval-gated publish step."
+    },
+    {
+      "name": "brain-growth",
+      "source": "./plugins/brain-growth",
+      "description": "Career growth: mine evidence from your work, set objectives, run objective reviews and self-reviews. Confidential by default."
+    },
+    {
+      "name": "brain-mentoring",
+      "source": "./plugins/brain-mentoring",
+      "description": "Mentorships, as mentor or mentee: session prep, notes, goals and progress."
+    },
+    {
+      "name": "brain-stakeholders",
+      "source": "./plugins/brain-stakeholders",
+      "description": "People pages, org chart, stakeholder map and 1:1 prep drafts."
+    },
+    {
+      "name": "brain-learning-loop",
+      "source": "./plugins/brain-learning-loop",
+      "description": "Nightly session consolidation into memory with hypotheses and improvement proposals; weekly system review; rule promotion."
+    },
+    {
+      "name": "brain-steal-list",
+      "source": "./plugins/brain-steal-list",
+      "description": "A nightly review of ideas you clipped from others' setups: what to steal, adapt or skip, with a dashboard."
+    },
+    {
+      "name": "brain-grill",
+      "source": "./plugins/brain-grill",
+      "description": "Grill me: relentless, workspace-aware stress tests of PRDs, roadmaps, decisions and objectives."
+    }
+  ]
+}

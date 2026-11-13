@@ -1,0 +1,7 @@
+{
+  "name": "brain-ingest-notes",
+  "version": "0.1.0",
+  "description": "Manual notes: drop markdown or text files (or capture a note in chat) into an inbox and they join the pipeline as raw/notes with the same pending-queue flags as every other source.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

@@ -1,0 +1,44 @@
+{
+  "channel_name": "#proj-checkout",
+  "channel_id": "C0FERN0001",
+  "date": "2026-11-03",
+  "messages": [
+    {
+      "ts": "1793697240.000100",
+      "user_name": "Sam Patel",
+      "text": "Heads up: the new payment sheet is behind the `checkout_v2` flag in staging from today. Please break it.\nTest plan: https://fernhill.example/wiki/checkout-v2-test-plan",
+      "reactions": [
+        {
+          "name": "eyes",
+          "count": 3
+        },
+        {
+          "name": "white_check_mark",
+          "count": 1
+        }
+      ],
+      "thread": [
+        {
+          "ts": "1793698260.000200",
+          "user_name": "Jordan Lee",
+          "text": "Found one already: the saved-card list overflows on narrow screens. Screenshot in the design thread."
+        },
+        {
+          "ts": "1793698800.000300",
+          "user_name": "Sam Patel",
+          "text": "Thanks Jordan. Logged as CHK-212, fix lands tomorrow."
+        }
+      ]
+    },
+    {
+      "ts": "1793703720.000400",
+      "user_name": "Taylor Brooks",
+      "text": "Baseline conversion for the old sheet over the last 4 weeks is 61.4%. I will set up the experiment dashboard against that number."
+    },
+    {
+      "ts": "1793720820.000500",
+      "user_name": "Alex Morgan",
+      "text": "Decision: we ship the payment sheet to 10% of traffic on 17 November, not before. Rollout plan goes into the project page today."
+    }
+  ]
+}

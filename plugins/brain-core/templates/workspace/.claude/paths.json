@@ -1,0 +1,51 @@
+{
+  "_comment": "Path map for this claude-second-brain-os workspace. All paths are relative to the workspace root. Scripts read it via brainos.workspace.path(section, key); never hardcode a path. Modules add their own sections during /brain-core:setup.",
+  "_version": "1.0",
+  "_notes": {
+    "create_on_demand": [
+      "system/kb.db",
+      "system/run/run-context.json",
+      "system/run/run-log.json",
+      "system/run/pipeline.json",
+      "system/adrs",
+      "system/sessions",
+      "code",
+      ".secrets/apis.env",
+      "inbox/proposals",
+      "digests"
+    ]
+  },
+  "core": {
+    "critical_facts": "CRITICAL_FACTS.md",
+    "claude_md": "CLAUDE.md",
+    "rules": "RULES.md",
+    "soul": "SOUL.md",
+    "brand": "BRAND.md",
+    "memory": "MEMORY.md",
+    "index": "INDEX.md",
+    "rules_dir": ".claude/rules",
+    "module_config_dir": ".claude/brain",
+    "raw": "raw",
+    "projects": "projects",
+    "people": "people",
+    "org": "people/_org.yaml",
+    "topics": "topics",
+    "digests": "digests",
+    "inbox": "inbox",
+    "attention": "inbox/attention.md",
+    "proposals": "inbox/proposals",
+    "todos": "todos/todo.md",
+    "done_history": "todos/done.md",
+    "system": "system",
+    "schema": "system/schema",
+    "adrs": "system/adrs",
+    "sessions": "system/sessions",
+    "db": "system/kb.db",
+    "run_dir": "system/run",
+    "pipeline": "system/run/pipeline.json",
+    "run_context": "system/run/run-context.json",
+    "run_log": "system/run/run-log.json",
+    "code": "code",
+    "secrets_env": ".secrets/apis.env"
+  }
+}

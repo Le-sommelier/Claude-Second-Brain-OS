@@ -1,0 +1,26 @@
+{
+  "_comment": "claude-second-brain-os workspace config. Written by /brain-core:setup; edit freely. Its presence marks the workspace root.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "{{OWNER_NAME}}",
+    "first_name": "{{OWNER_FIRST_NAME}}",
+    "person_id": "{{OWNER_PERSON_ID}}",
+    "role": "{{OWNER_ROLE}}",
+    "company": "{{COMPANY}}",
+    "timezone": "{{TIMEZONE}}",
+    "week_starts": "monday"
+  },
+  "modules": [],
+  "confidential": {
+    "globs": ["growth/**"],
+    "channel_patterns": ["*-leadership*", "*-leads", "*-lead-*", "*-exec*", "exec-*", "leads-*"]
+  },
+  "models": {
+    "verbatim": "haiku",
+    "synthesis": "sonnet",
+    "judgement": "opus"
+  },
+  "publishing": {
+    "require_per_artifact_approval": true
+  }
+}

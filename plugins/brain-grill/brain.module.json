@@ -1,0 +1,16 @@
+{
+  "module": "brain-grill",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {
+    "grill": {
+      "context_dir": "system/run/grill",
+      "payloads": "system/run/payloads"
+    }
+  },
+  "folders": ["system/run/grill", "system/run/payloads"],
+  "templates": [],
+  "bricks": [],
+  "scheduled": [],
+  "confidential_globs": []
+}

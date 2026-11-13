@@ -1,0 +1,77 @@
+{
+  "_comment": "Signal patterns for the weekly miner. Each pattern: regex_patterns match a line; keyword_anchors (optional) must appear within 5 lines; requires_senior_leader needs a senior name nearby (see senior-leaders.json). framework_skills is a hint for the classifier: use your own framework's skill names. This is a Fernhill example; tune it to your work.",
+  "actor_aliases": [],
+  "patterns": [
+    {
+      "id": "scope-expansion",
+      "regex_patterns": ["\\b(led|drove|owned|shaped|kicked off|stepped in|picked up)\\b"],
+      "keyword_anchors": ["outside", "other team", "another team", "new area", "cross-team", "beyond"],
+      "framework_skills": ["Delivery Rhythm", "Influence and Narrative"],
+      "notes": "Work outside the core squad area. Evidence of scope beyond the role."
+    },
+    {
+      "id": "senior-tier-feedback",
+      "regex_patterns": ["\\b(said|noted|praised|called out|feedback|asked for|thanked)\\b"],
+      "keyword_anchors": [],
+      "requires_senior_leader": true,
+      "framework_skills": [],
+      "notes": "A senior leader comments on your work. Highest-confidence evidence; the skill depends on what they said."
+    },
+    {
+      "id": "cross-team-work",
+      "regex_patterns": ["\\b(cross-team|cross-functional|cross-squad|joint with|paired with|partnered with)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Influence and Narrative"],
+      "notes": "Collaboration across team boundaries."
+    },
+    {
+      "id": "teaching-upskilling",
+      "regex_patterns": ["\\b(demoed|demo'd|walked .{0,20} through|ran a session|workshop|onboarded|coached|taught|brown-bag)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Team Uplift"],
+      "notes": "Sharing methods or tooling with others; mentoring."
+    },
+    {
+      "id": "data-measurement",
+      "regex_patterns": ["\\b(metric|KPI|OKR|instrument(ed|ation)|dashboard|A/B test|experiment|cohort|baseline)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Evidence and Metrics"],
+      "notes": "Metric design, instrumentation, experiments."
+    },
+    {
+      "id": "external-engagement",
+      "regex_patterns": ["\\b(conference|meetup|customer advisory|partner call|external talk|podcast)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Influence and Narrative"],
+      "notes": "Presence outside the company."
+    },
+    {
+      "id": "value-customers-first",
+      "regex_patterns": ["\\b(customer(s)? (said|told|asked)|user research|interview(s|ed)?|support tickets?)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Discovery Craft"],
+      "notes": "Value behaviour: start from the customer's problem."
+    },
+    {
+      "id": "value-own-the-outcome",
+      "regex_patterns": ["\\b(took ownership|my call|I'll own|owned the|accountable|flagged the risk|escalated early)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Delivery Rhythm"],
+      "notes": "Value behaviour: accountability and early risk-flagging."
+    },
+    {
+      "id": "value-ship-small",
+      "regex_patterns": ["\\b(shipped|released|rolled out|launched)\\b"],
+      "keyword_anchors": ["small", "increment", "pilot", "behind a flag", "slice"],
+      "framework_skills": ["Delivery Rhythm"],
+      "notes": "Value behaviour: small slices, fast learning."
+    },
+    {
+      "id": "value-lift-others",
+      "regex_patterns": ["\\b(credited|thanked|celebrated|shout-?out|handed over|made space for)\\b"],
+      "keyword_anchors": [],
+      "framework_skills": ["Team Uplift"],
+      "notes": "Value behaviour: lifting colleagues."
+    }
+  ]
+}

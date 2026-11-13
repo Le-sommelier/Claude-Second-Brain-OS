@@ -1,0 +1,24 @@
+{
+  "channel_name": "#partner-api",
+  "channel_id": "C0FERN0002",
+  "date": "2026-11-04",
+  "messages": [
+    {
+      "ts": "1793786700.000100",
+      "user_name": "Sam Patel",
+      "text": "Rate limits for the partner sandbox: 60 requests/minute per key, burst of 120. Docs PR is up."
+    },
+    {
+      "ts": "1793802120.000200",
+      "user_name": "Riley Chen",
+      "text": "Two partners asked about webhooks for booking changes. Can we say \"next quarter\" or is that too optimistic?",
+      "thread": [
+        {
+          "ts": "1793802600.000300",
+          "user_name": "Alex Morgan",
+          "text": "I would say \"planned, not committed\" until Sam sizes it. I will get an estimate by Friday."
+        }
+      ]
+    }
+  ]
+}

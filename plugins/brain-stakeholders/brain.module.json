@@ -1,0 +1,45 @@
+{
+  "module": "brain-stakeholders",
+  "requires": [
+    "brain-core"
+  ],
+  "connectors": [],
+  "paths": {
+    "stakeholders": {
+      "roster": ".claude/brain/one-on-one-roster.json",
+      "ledger": "growth/one-on-ones/ledger.json",
+      "queue": "growth/one-on-ones/queue",
+      "payloads": "growth/one-on-ones/payloads",
+      "map_md": "people/_stakeholder-map.md"
+    }
+  },
+  "folders": [
+    "people",
+    "growth/one-on-ones/queue",
+    "growth/one-on-ones/payloads"
+  ],
+  "templates": [
+    {
+      "from": "templates/one-on-one-roster.json",
+      "to": ".claude/brain/one-on-one-roster.json"
+    },
+    {
+      "from": "templates/_org.yaml",
+      "to": "people/_org.yaml"
+    }
+  ],
+  "bricks": [
+    {
+      "stage": "derive",
+      "lane": "one-on-ones",
+      "brick": "brain-stakeholders:one-on-ones",
+      "model": "sonnet",
+      "per_date": false
+    }
+  ],
+  "scheduled": [],
+  "confidential_globs": [
+    "growth/one-on-ones/**",
+    "people/_stakeholder-map.*"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "_doc": "The ingest pipeline. Setup copies this to system/run/pipeline.json, then merges in the `bricks` of every installed module (brain.module.json). Stages run in order. In a 'lanes' stage the lanes run in parallel and the bricks inside a lane run in sequence; 'steps' run in sequence unless 'parallel' is true. A brick is a skill (spawned as a subagent on its 'model') or a script (a 'script' path, run directly; it prints a contract return). Per-brick flags: enabled (default true), per_date (one run per date in the window), affects_status (default true). Install or remove a module and re-run /brain-core:setup to change the bricks; edit 'enabled' by hand to pause one.",
+  "_version": "1.0",
+  "settings": {
+    "max_catchup_days": 14,
+    "flagged_lookback_days": 14,
+    "owed_lookback_days": 14,
+    "run_log_retention_days": 90
+  },
+  "stages": [
+    {
+      "id": "fetch",
+      "lanes": {}
+    },
+    {
+      "id": "transform",
+      "steps": []
+    },
+    {
+      "id": "index",
+      "steps": []
+    },
+    {
+      "id": "derive",
+      "parallel": true,
+      "steps": []
+    },
+    {
+      "id": "finalise",
+      "steps": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "required_headings": [
+    "# Weekly Digest",
+    "## Overview",
+    "## Project status",
+    "## Decisions and asks",
+    "## Sources"
+  ],
+  "required_labels": [
+    "**Week:**",
+    "**Window:**",
+    "- Summaries reviewed:",
+    "- Slack files:",
+    "- Previous digest:"
+  ],
+  "quality_checks": [
+    "Replace every template placeholder in the header",
+    "Include exact dates when referencing commitments or milestones",
+    "Cite a summary or entry as [[id]] for every claim",
+    "List every reviewed meeting summary in the Sources section",
+    "Replace vague status phrases with the specific fact when stronger evidence exists",
+    "Confidential sources appear at signal level only: no names, amounts, ratings or quotes"
+  ]
+}

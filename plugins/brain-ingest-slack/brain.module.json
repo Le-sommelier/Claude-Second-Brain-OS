@@ -1,0 +1,29 @@
+{
+  "module": "brain-ingest-slack",
+  "requires": ["brain-core"],
+  "connectors": [
+    {"name": "Slack", "why": "read watched channels, threads, user profiles and your flag reactions (read-only)", "required": true}
+  ],
+  "paths": {
+    "slack": {
+      "raw": "raw/slack",
+      "channels_config": ".claude/brain/slack-channels.json",
+      "settings": ".claude/brain/slack-config.json",
+      "channel_ledger": "system/run/slack-channel-ledger.json",
+      "flagged_ledger": "system/run/slack-flagged-ledger.json",
+      "owed_dir": "inbox/owed-replies"
+    }
+  },
+  "folders": ["raw/slack", "inbox/owed-replies"],
+  "templates": [
+    {"from": "templates/slack-channels.json", "to": ".claude/brain/slack-channels.json"},
+    {"from": "templates/slack-config.json", "to": ".claude/brain/slack-config.json"}
+  ],
+  "bricks": [
+    {"stage": "fetch", "lane": "slack", "brick": "brain-ingest-slack:ingest-slack-channels", "model": "haiku", "per_date": true},
+    {"stage": "fetch", "lane": "slack", "brick": "brain-ingest-slack:ingest-slack-flagged", "model": "haiku"},
+    {"stage": "fetch", "lane": "slack", "brick": "brain-ingest-slack:ingest-owed-replies", "model": "sonnet", "enabled": false, "affects_status": false}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

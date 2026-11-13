@@ -1,0 +1,20 @@
+{
+  "module": "brain-digests",
+  "requires": ["brain-core"],
+  "connectors": [
+    {"name": "Confluence (Atlassian)", "why": "publish an approved digest as a page, only after an explicit yes", "required": false},
+    {"name": "Slack", "why": "create a message draft of an approved digest, only after an explicit yes", "required": false},
+    {"name": "Microsoft 365 Outlook", "why": "create an email draft of an approved digest, only after an explicit yes", "required": false}
+  ],
+  "paths": {},
+  "folders": ["digests/weekly", "digests/monthly"],
+  "templates": [
+    {"from": "templates/digests.json", "to": ".claude/brain/digests.json"}
+  ],
+  "bricks": [],
+  "scheduled": [
+    {"name": "brain-weekly-digest", "prompt": "scheduled/weekly-digest.md", "cron": "0 15 * * 5"},
+    {"name": "brain-monthly-digest", "prompt": "scheduled/monthly-digest.md", "cron": "0 8 1 * *"}
+  ],
+  "confidential_globs": []
+}

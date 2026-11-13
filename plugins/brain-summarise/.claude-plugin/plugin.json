@@ -1,0 +1,7 @@
+{
+  "name": "brain-summarise",
+  "version": "0.1.0",
+  "description": "Meeting summaries with decisions and actions, plus todo extraction.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

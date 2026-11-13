@@ -1,0 +1,10 @@
+# Claude-Second-Brain-OS workspace
+.secrets/*.env
+*.env
+system/kb.db
+system/run/payloads/
+system/run/run-context.json
+system/run/returns.json
+.claude/.session-log/
+.DS_Store
+__pycache__/

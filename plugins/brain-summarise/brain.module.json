@@ -1,0 +1,14 @@
+{
+  "module": "brain-summarise",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {},
+  "folders": [],
+  "templates": [],
+  "bricks": [
+    {"stage": "transform", "lane": "meetings", "brick": "brain-summarise:meeting-summarise", "model": "haiku", "per_date": false},
+    {"stage": "derive", "lane": "todos", "brick": "brain-summarise:todo-extract", "model": "sonnet", "per_date": false}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

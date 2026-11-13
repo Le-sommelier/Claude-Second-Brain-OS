@@ -1,0 +1,21 @@
+{
+  "_comment": "Config for the weekly system review. Paths come from .claude/paths.json, never from here. Thresholds in days unless named otherwise. Edit freely; the script validates the file before it runs.",
+  "_version": "1.0",
+  "scan": {
+    "project_facets": ["status", "risks", "resources", "teams", "milestones", "hypotheses"],
+    "project_files_expected": ["README.md"],
+    "vault_dirs": ["projects", "topics", "people"],
+    "ignore_dirs": [".git", "node_modules", "__pycache__", "archive", "templates"],
+    "output_filename_template": "_system-review-{iso_week}.md"
+  },
+  "thresholds": {
+    "promotion_min_sessions": 3,
+    "demotion_min_refutations": 2,
+    "stale_ledger_days": 30,
+    "stale_entry_days": 60,
+    "inactive_project_days": 30,
+    "memory_window_days": 7,
+    "proposal_resurface_days": 14,
+    "oversized_page_lines": 400
+  }
+}

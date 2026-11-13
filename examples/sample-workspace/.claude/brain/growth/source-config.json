@@ -1,0 +1,20 @@
+{
+  "_comment": "What the growth miner reads and how thresholds work. Paths are workspace-relative globs. Slack is left out on purpose (noisy, and some channels are confidential); add raw/slack globs if you want it. Anything confidential outside growth/ is skipped.",
+  "levels": {"current": "P3", "target": "P4"},
+  "lookback": {"default_days": 10, "backfill_days": 120},
+  "scan": {
+    "globs": [
+      "raw/meetings/**/*.md",
+      "projects/*/decisions/*.md",
+      "projects/*/rollups/*.md",
+      "digests/weekly/*.md"
+    ],
+    "growth_globs": [
+      "growth/reviews/**/*.md",
+      "growth/feedback/received/**/*.md",
+      "growth/mentoring/**/*.md"
+    ]
+  },
+  "exclusions": {"path_globs": ["growth/development/**"]},
+  "hypotheses": {"open_after_n_confirmations": 3, "promotion_candidate_after_n_confirmations": 5}
+}

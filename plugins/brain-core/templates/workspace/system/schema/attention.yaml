@@ -1,0 +1,51 @@
+# Named attention queries (edit freely: add, remove or tune) for `kb attention`. Run against system/kb.db; :today is bound to the run date.
+# Each query must return columns: ref, project, detail. One section per query in inbox/attention.md.
+- name: overdue-open-items
+  description: Risks, dependencies and milestones past their due date and not closed.
+  sql: >
+    select id as ref, project, substr(body,1,120) || ' (due ' || due || ')' as detail
+    from current_entries
+    where due is not null and due < :today and state not in ('closed','mitigated','done')
+    order by due
+- name: red-or-slipping-status
+  description: Latest RAG-bearing status entry per project, when red, off-track, slipped or at-risk with an amber/red RAG.
+  sql: >
+    select e.id as ref, e.project, e.state || ' / ' || e.rag || ' (' || e.date || '): ' || substr(e.body,1,100) as detail
+    from entries e
+    where e.facet = 'status' and e.rag is not null
+      and e.date || printf('%06d', e.line) = (select max(x.date || printf('%06d', x.line)) from entries x where x.project = e.project and x.facet = 'status' and x.rag is not null)
+      and (e.rag in ('red','amber') or e.state in ('off-track','slipped'))
+    order by e.project
+- name: proposed-decisions
+  description: Decisions still proposed (AI-written or low-trust), high-trust first, top 15 (total in the query `select count(*) from decisions where status='proposed'`).
+  sql: >
+    select id as ref, project, coalesce(title,id) || ' [' || by || ', trust ' || coalesce(trust,'-') || ']' as detail
+    from decisions where status = 'proposed' order by case trust when 'high' then 0 when 'medium' then 1 else 2 end, date desc limit 15
+- name: unconfirmed-ai-entries
+  description: Open AI-written entries never confirmed, oldest first.
+  sql: >
+    select id as ref, project, facet || ': ' || substr(body,1,100) as detail
+    from current_entries
+    where by = 'ai' and state in ('open','at-risk','proposed')
+    order by date limit 20
+- name: stale-projects
+  description: Projects with no facet entry or decision in the last 30 days.
+  sql: >
+    select e.id as ref, substr(e.id,6) as project, 'last activity ' || coalesce(max(a.d),'never') as detail
+    from entities e left join (
+      select project, max(date) d from entries group by project
+      union all select project, max(date) from decisions group by project
+    ) a on 'proj-' || a.project = e.id
+    where e.type = 'project'
+    group by e.id
+    having coalesce(max(a.d),'0000') < date(:today,'-30 day')
+- name: unprocessed-raw
+  description: Raw items whose summary has not been merged into a project yet.
+  sql: >
+    select id as ref, coalesce(project,'-') as project, kind || ' ' || date as detail
+    from raw_items where wiki_processed = 0 and kind in ('mtg','conf','note') order by date desc limit 20
+- name: open-proposals
+  description: System or owner improvement proposals awaiting accept/reject.
+  sql: >
+    select id as ref, '-' as project, '[' || audience || '] ' || coalesce(title,'') as detail
+    from proposals where state = 'open' order by id

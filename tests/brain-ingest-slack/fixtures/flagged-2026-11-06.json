@@ -1,0 +1,40 @@
+{
+  "messages": [
+    {
+      "permalink": "https://fernhill.slack.com/archives/C0FERN0001/p1793697240000100",
+      "channel_name": "#proj-checkout",
+      "channel_id": "C0FERN0001",
+      "ts": "1793697240.000100",
+      "posted_at": "2026-11-03T09:14:00+00:00",
+      "author": "Sam Patel",
+      "author_handle": "@sam.patel",
+      "text": "Heads up: the new payment sheet is behind the `checkout_v2` flag in staging from today. Please break it.",
+      "tags": [
+        "checkout-revamp"
+      ],
+      "signal_quality": "medium",
+      "thread": [
+        {
+          "author": "Jordan Lee",
+          "time": "09:31",
+          "permalink": "https://fernhill.slack.com/archives/C0FERN0001/p1793698260000200?thread_ts=1793697240.000100&cid=C0FERN0001",
+          "text": "Found one already: the saved-card list overflows on narrow screens. Screenshot in the design thread."
+        }
+      ]
+    },
+    {
+      "permalink": "https://fernhill.slack.com/archives/C0FERN0002/p1793802120000200",
+      "channel_name": "#partner-api",
+      "channel_id": "C0FERN0002",
+      "ts": "1793802120.000200",
+      "posted_at": "2026-11-04T14:22:00+00:00",
+      "author": "Riley Chen",
+      "author_handle": "@riley.chen",
+      "text": "Two partners asked about webhooks for booking changes. Can we say \"next quarter\" or is that too optimistic?",
+      "tags": [
+        "partner-api"
+      ],
+      "signal_quality": "high"
+    }
+  ]
+}

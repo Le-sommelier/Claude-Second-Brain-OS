@@ -1,0 +1,24 @@
+{
+  "channel_name": "#product-leads",
+  "channel_id": "C0FERN0004",
+  "date": "2026-11-04",
+  "messages": [
+    {
+      "ts": "1793811900.000100",
+      "user_name": "Morgan Diaz",
+      "text": "Headcount for next half is still being decided. I expect to know by the end of the month; please do not plan around extra hires yet.",
+      "thread": [
+        {
+          "ts": "1793812800.000200",
+          "user_name": "Riley Chen",
+          "text": "Understood. I will keep the partner-api staffing ask separate so it can be decided on its own."
+        }
+      ]
+    },
+    {
+      "ts": "1793814300.000300",
+      "user_name": "Riley Chen",
+      "text": "Reminder that the ratings calibration doc is private to this channel."
+    }
+  ]
+}

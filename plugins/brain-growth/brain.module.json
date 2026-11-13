@@ -1,0 +1,71 @@
+{
+  "module": "brain-growth",
+  "requires": [
+    "brain-core"
+  ],
+  "connectors": [],
+  "paths": {
+    "growth": {
+      "root": "growth",
+      "objectives": "growth/objectives",
+      "reviews": "growth/reviews",
+      "feedback": "growth/feedback",
+      "development": "growth/development",
+      "frameworks": "growth/development/frameworks",
+      "evidence": "growth/development/evidence-candidates.md",
+      "hypotheses": "growth/development/level-hypotheses.md",
+      "tracker": "growth/development/performance-tracker.md",
+      "matrix": "growth/development/coverage-matrix.md",
+      "self_assessment": "growth/development/self-assessment.json",
+      "run": "growth/development/run",
+      "run_log": "growth/development/run/run-log.json",
+      "managees": "growth/managees"
+    }
+  },
+  "folders": [
+    "growth/objectives",
+    "growth/reviews",
+    "growth/feedback/given",
+    "growth/feedback/received",
+    "growth/development/frameworks",
+    "growth/managees",
+    "growth/development/run"
+  ],
+  "templates": [
+    {
+      "from": "templates/source-config.json",
+      "to": ".claude/brain/growth/source-config.json"
+    },
+    {
+      "from": "templates/signal-patterns.json",
+      "to": ".claude/brain/growth/signal-patterns.json"
+    },
+    {
+      "from": "templates/values.json",
+      "to": ".claude/brain/growth/values.json"
+    },
+    {
+      "from": "templates/senior-leaders.json",
+      "to": ".claude/brain/growth/senior-leaders.json"
+    },
+    {
+      "from": "templates/review-format.json",
+      "to": ".claude/brain/growth/review-format.json"
+    },
+    {
+      "from": "templates/framework.md",
+      "to": "growth/development/frameworks/framework.md"
+    }
+  ],
+  "bricks": [],
+  "scheduled": [
+    {
+      "name": "brain-growth-weekly",
+      "prompt": "scheduled/growth-weekly.md",
+      "cron": "0 19 * * 0"
+    }
+  ],
+  "confidential_globs": [
+    "growth/**"
+  ]
+}

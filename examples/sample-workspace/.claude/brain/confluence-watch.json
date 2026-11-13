@@ -1,0 +1,19 @@
+{
+  "_comment": "What brain-ingest-confluence watches. Everything here is searched read-only. Edit freely; setup never overwrites this file. Fictional example for the Fernhill sample workspace.",
+  "lookback_days": 14,
+  "max_pages_per_run": 50,
+  "spaces": [
+    {"key": "PROD", "include_labels": [], "_note": "every page changed in the space; add include_labels to narrow it"}
+  ],
+  "page_ids": [],
+  "labels": ["prd", "decision"],
+  "cql": [
+    {"name": "partner-api-docs", "query": "space = \"PROD\" AND type = page AND title ~ \"Partner API\" AND lastmodified >= \"{since}\""}
+  ],
+  "decision_detection": {
+    "title_patterns": ["^Decision\\s*:", "^ADR[- ]?\\d+"],
+    "labels": ["decision", "adr"],
+    "tag": "decision-page"
+  },
+  "confidential_labels": ["confidential", "restricted"]
+}

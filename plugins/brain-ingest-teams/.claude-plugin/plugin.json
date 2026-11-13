@@ -1,0 +1,7 @@
+{
+  "name": "brain-ingest-teams",
+  "version": "0.1.0",
+  "description": "Meetings: Teams transcripts fetched through the Microsoft 365 connector, plus VTT/TXT/DOCX transcript drops, normalised into raw/meetings with cross-route dedupe.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

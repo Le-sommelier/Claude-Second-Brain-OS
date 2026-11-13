@@ -1,0 +1,9 @@
+{
+  "name": "brain-stakeholders",
+  "version": "0.1.0",
+  "description": "People pages, org chart, stakeholder map and 1:1 prep and drafts. Notes about people are confidential.",
+  "license": "MIT",
+  "dependencies": [
+    "brain-core"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "module": "brain-mentoring",
+  "requires": [
+    "brain-core"
+  ],
+  "connectors": [],
+  "paths": {
+    "mentoring": {
+      "root": "growth/mentoring",
+      "run": "growth/mentoring/_run"
+    }
+  },
+  "folders": [
+    "growth/mentoring"
+  ],
+  "templates": [],
+  "bricks": [],
+  "scheduled": [],
+  "confidential_globs": [
+    "growth/mentoring/**"
+  ]
+}

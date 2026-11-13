@@ -1,0 +1,23 @@
+{
+  "module": "brain-learning-loop",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {
+    "learning": {
+      "dir": "system/learning",
+      "ledger": "system/learning/ledger.json",
+      "hypotheses": "system/learning/hypotheses.md",
+      "watermark": "system/learning/consolidate-watermark.json",
+      "input_dir": "system/run/learning",
+      "reviews": "system/reviews"
+    }
+  },
+  "folders": ["system/learning", "system/reviews", "system/sessions"],
+  "templates": [],
+  "bricks": [],
+  "scheduled": [
+    {"name": "brain-session-consolidate", "prompt": "scheduled/consolidate-nightly.md", "cron": "0 19 * * *"},
+    {"name": "brain-system-review", "prompt": "scheduled/system-review-weekly.md", "cron": "0 15 * * 5"}
+  ],
+  "confidential_globs": []
+}

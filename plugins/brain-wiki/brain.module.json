@@ -1,0 +1,13 @@
+{
+  "module": "brain-wiki",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {},
+  "folders": [],
+  "templates": [],
+  "bricks": [
+    {"stage": "derive", "lane": "wiki", "brick": "brain-wiki:wiki-update", "model": "sonnet", "per_date": false}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

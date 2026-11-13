@@ -1,0 +1,7 @@
+{
+  "name": "brain-grill",
+  "version": "0.1.0",
+  "description": "Grill me: a relentless, one-question-at-a-time stress test of a PRD, roadmap, decision, set of objectives or exec update, run against what your workspace already knows. Ends with a written list of holes; nothing is saved without your yes.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

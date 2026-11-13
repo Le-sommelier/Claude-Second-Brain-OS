@@ -1,0 +1,28 @@
+{
+  "module": "brain-steal-list",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {
+    "steal": {
+      "home": "steal",
+      "inbox": "steal/inbox",
+      "sources": "steal/sources",
+      "db": "steal/steal.db",
+      "digests": "steal/digests",
+      "plans": "steal/plans",
+      "board": "steal/board.md",
+      "my_setup": "steal/my-setup.md",
+      "config": ".claude/brain/steal.json",
+      "payloads": "system/run/payloads"
+    }
+  },
+  "folders": ["steal/inbox", "steal/sources", "steal/digests", "steal/plans", "system/run/payloads"],
+  "templates": [
+    {"from": "templates/steal.json", "to": ".claude/brain/steal.json"}
+  ],
+  "bricks": [],
+  "scheduled": [
+    {"name": "brain-steal-review-nightly", "prompt": "scheduled/steal-review-nightly.md", "cron": "0 22 * * *"}
+  ],
+  "confidential_globs": []
+}

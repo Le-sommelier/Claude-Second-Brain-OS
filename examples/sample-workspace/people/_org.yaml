@@ -1,0 +1,63 @@
+# Org chart. Manager is a person id. Edit freely: scripts only add records, never rewrite yours.
+people:
+  - id: morgan-diaz
+    name: Morgan Diaz
+    role: VP Product
+    tier: exec
+    team: Product
+    email: morgan.diaz@fernhill.example
+    status: active
+  - id: riley-chen
+    name: Riley Chen
+    role: Director of Product
+    tier: lead
+    manager: morgan-diaz
+    team: Product
+    email: riley.chen@fernhill.example
+    slack_id: U0RILEY01
+    status: active
+  - id: alex-morgan
+    name: Alex Morgan
+    role: Senior Product Manager
+    tier: ic
+    manager: riley-chen
+    team: Product
+    email: alex.morgan@fernhill.example
+    slack_id: U0ALEX001
+    status: active
+  - id: casey-nguyen
+    name: Casey Nguyen
+    role: Product Manager
+    tier: ic
+    manager: alex-morgan
+    team: Product
+    email: casey.nguyen@fernhill.example
+    slack_id: U0CASEY01
+    status: active
+  - id: sam-patel
+    name: Sam Patel
+    role: Engineering Manager
+    tier: lead
+    manager: morgan-diaz
+    team: Engineering
+    email: sam.patel@fernhill.example
+    slack_id: U0SAM0001
+    status: active
+  - id: jordan-lee
+    name: Jordan Lee
+    role: Product Designer
+    tier: ic
+    manager: riley-chen
+    team: Design
+    email: jordan.lee@fernhill.example
+    slack_id: U0JORDAN1
+    status: active
+  - id: taylor-brooks
+    name: Taylor Brooks
+    role: Data Analyst
+    tier: ic
+    manager: sam-patel
+    team: Data
+    email: taylor.brooks@fernhill.example
+    slack_id: U0TAYLOR1
+    status: active

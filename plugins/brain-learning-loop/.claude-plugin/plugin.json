@@ -1,0 +1,7 @@
+{
+  "name": "brain-learning-loop",
+  "version": "0.1.0",
+  "description": "Nightly session consolidation into MEMORY.md with hypotheses and improvement proposals; weekly system review that surfaces rule-promotion candidates. The owner promotes, never the system.",
+  "license": "MIT",
+  "dependencies": ["brain-core"]
+}

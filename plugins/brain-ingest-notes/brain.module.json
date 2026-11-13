@@ -1,0 +1,19 @@
+{
+  "module": "brain-ingest-notes",
+  "requires": ["brain-core"],
+  "connectors": [],
+  "paths": {
+    "notes": {
+      "root": "raw/notes",
+      "inbox": "inbox/notes",
+      "processed": "inbox/notes/_processed"
+    }
+  },
+  "folders": ["raw/notes", "inbox/notes", "inbox/notes/_processed"],
+  "templates": [],
+  "bricks": [
+    {"stage": "fetch", "lane": "notes", "brick": "brain-ingest-notes:ingest-notes", "model": "none", "script": "skills/ingest-notes/scripts/normalise.py"}
+  ],
+  "scheduled": [],
+  "confidential_globs": []
+}

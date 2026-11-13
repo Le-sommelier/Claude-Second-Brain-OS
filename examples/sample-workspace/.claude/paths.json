@@ -1,0 +1,127 @@
+{
+  "_comment": "Path map for this claude-second-brain-os workspace. All paths are relative to the workspace root. Scripts read it via brainos.workspace.path(section, key); never hardcode a path. Modules add their own sections during /brain-core:setup.",
+  "_version": "1.0",
+  "_notes": {
+    "create_on_demand": [
+      "system/kb.db",
+      "system/run/run-context.json",
+      "system/run/run-log.json",
+      "system/run/pipeline.json",
+      "system/adrs",
+      "system/sessions",
+      "code",
+      ".secrets/apis.env",
+      "inbox/proposals",
+      "digests"
+    ]
+  },
+  "core": {
+    "critical_facts": "CRITICAL_FACTS.md",
+    "claude_md": "CLAUDE.md",
+    "rules": "RULES.md",
+    "soul": "SOUL.md",
+    "brand": "BRAND.md",
+    "memory": "MEMORY.md",
+    "index": "INDEX.md",
+    "rules_dir": ".claude/rules",
+    "module_config_dir": ".claude/brain",
+    "raw": "raw",
+    "projects": "projects",
+    "people": "people",
+    "org": "people/_org.yaml",
+    "topics": "topics",
+    "digests": "digests",
+    "inbox": "inbox",
+    "attention": "inbox/attention.md",
+    "proposals": "inbox/proposals",
+    "todos": "todos/todo.md",
+    "done_history": "todos/done.md",
+    "system": "system",
+    "schema": "system/schema",
+    "adrs": "system/adrs",
+    "sessions": "system/sessions",
+    "db": "system/kb.db",
+    "run_dir": "system/run",
+    "pipeline": "system/run/pipeline.json",
+    "run_context": "system/run/run-context.json",
+    "run_log": "system/run/run-log.json",
+    "code": "code",
+    "secrets_env": ".secrets/apis.env"
+  },
+  "slack": {
+    "raw": "raw/slack",
+    "channels_config": ".claude/brain/slack-channels.json",
+    "settings": ".claude/brain/slack-config.json",
+    "channel_ledger": "system/run/slack-channel-ledger.json",
+    "flagged_ledger": "system/run/slack-flagged-ledger.json",
+    "owed_dir": "inbox/owed-replies"
+  },
+  "meetings": {
+    "root": "raw/meetings",
+    "inbox": "inbox/transcripts",
+    "teams_inbox": "inbox/transcripts/teams",
+    "processed": "inbox/transcripts/_processed",
+    "ledger": "system/run/teams-ledger.json"
+  },
+  "confluence": {
+    "root": "raw/confluence",
+    "state": "system/run/confluence-state.json",
+    "watch": ".claude/brain/confluence-watch.json"
+  },
+  "notes": {
+    "root": "raw/notes",
+    "inbox": "inbox/notes",
+    "processed": "inbox/notes/_processed"
+  },
+  "growth": {
+    "root": "growth",
+    "objectives": "growth/objectives",
+    "reviews": "growth/reviews",
+    "feedback": "growth/feedback",
+    "development": "growth/development",
+    "frameworks": "growth/development/frameworks",
+    "evidence": "growth/development/evidence-candidates.md",
+    "hypotheses": "growth/development/level-hypotheses.md",
+    "tracker": "growth/development/performance-tracker.md",
+    "matrix": "growth/development/coverage-matrix.md",
+    "self_assessment": "growth/development/self-assessment.json",
+    "run": "growth/development/run",
+    "run_log": "growth/development/run/run-log.json",
+    "managees": "growth/managees"
+  },
+  "mentoring": {
+    "root": "growth/mentoring",
+    "run": "growth/mentoring/_run"
+  },
+  "stakeholders": {
+    "roster": ".claude/brain/one-on-one-roster.json",
+    "ledger": "growth/one-on-ones/ledger.json",
+    "queue": "growth/one-on-ones/queue",
+    "payloads": "growth/one-on-ones/payloads",
+    "map_md": "people/_stakeholder-map.md"
+  },
+  "learning": {
+    "dir": "system/learning",
+    "ledger": "system/learning/ledger.json",
+    "hypotheses": "system/learning/hypotheses.md",
+    "watermark": "system/learning/consolidate-watermark.json",
+    "input_dir": "system/run/learning",
+    "reviews": "system/reviews"
+  },
+  "steal": {
+    "home": "steal",
+    "inbox": "steal/inbox",
+    "sources": "steal/sources",
+    "db": "steal/steal.db",
+    "digests": "steal/digests",
+    "plans": "steal/plans",
+    "board": "steal/board.md",
+    "my_setup": "steal/my-setup.md",
+    "config": ".claude/brain/steal.json",
+    "payloads": "system/run/payloads"
+  },
+  "grill": {
+    "context_dir": "system/run/grill",
+    "payloads": "system/run/payloads"
+  }
+}
