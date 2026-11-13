@@ -5,7 +5,7 @@ Career growth for a product manager, confidential by default. Everything lives i
 ## Install
 
 ```
-/plugin install brain-growth --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-growth --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

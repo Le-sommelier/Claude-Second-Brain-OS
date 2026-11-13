@@ -5,7 +5,7 @@ People pages, the org chart, a stakeholder map and 1:1 prep and drafts. Notes ab
 ## Install
 
 ```
-/plugin install brain-stakeholders --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-stakeholders --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

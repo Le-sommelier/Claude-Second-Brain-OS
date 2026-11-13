@@ -5,7 +5,7 @@ Keeps the knowledge base current from the pending queue, and answers questions f
 ## Install
 
 ```
-/plugin install brain-wiki --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-wiki --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

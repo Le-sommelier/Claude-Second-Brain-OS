@@ -65,13 +65,13 @@ ships in `examples/`.
 
 ```bash
 # In Claude Code: install core, then whichever modules you want
-/plugin install brain-core --marketplace YOUR-ORG/Claude-Second-Brain-OS
-/plugin install brain-ingest --marketplace YOUR-ORG/Claude-Second-Brain-OS
-/plugin install brain-ingest-slack --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-core --marketplace Le-sommelier/Claude-Second-Brain-OS
+/plugin install brain-ingest --marketplace Le-sommelier/Claude-Second-Brain-OS
+/plugin install brain-ingest-slack --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 On Claude Code older than 2.1.275, first add the marketplace with
-`/plugin marketplace add YOUR-ORG/Claude-Second-Brain-OS`, then `/plugin install brain-core@claude-second-brain-os`.
+`/plugin marketplace add Le-sommelier/Claude-Second-Brain-OS`, then `/plugin install brain-core@claude-second-brain-os`.
 
 Then open Claude Code in an empty folder (your future workspace) and run:
 

@@ -5,7 +5,7 @@ Slack for your second brain. Three bricks that the `brain-ingest` orchestrator r
 ## Install
 
 ```
-/plugin install brain-ingest-slack --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-ingest-slack --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

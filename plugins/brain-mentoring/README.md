@@ -5,7 +5,7 @@ Mentorships, as mentor or mentee, kept as plain markdown under `growth/mentoring
 ## Install
 
 ```
-/plugin install brain-mentoring --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-mentoring --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

@@ -5,7 +5,7 @@ Weekly and monthly digests built from what the ingest already produced, with a p
 ## Install
 
 ```
-/plugin install brain-digests --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-digests --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

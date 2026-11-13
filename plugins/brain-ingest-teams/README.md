@@ -6,7 +6,7 @@ and DOCX transcript drops. Contract: [docs/module-contract.md](../../docs/module
 ## Install
 
 ```
-/plugin install brain-ingest-teams --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-ingest-teams --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

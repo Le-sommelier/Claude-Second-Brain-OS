@@ -6,7 +6,7 @@ verbatim and re-queues a page whenever its version changes. Contract: [docs/modu
 ## Install
 
 ```
-/plugin install brain-ingest-confluence --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-ingest-confluence --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

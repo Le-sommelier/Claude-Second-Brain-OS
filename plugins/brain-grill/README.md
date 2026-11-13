@@ -6,7 +6,7 @@ already knows. It ends with a written list of holes, and saves nothing without y
 ## Install
 
 ```
-/plugin install brain-grill --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-grill --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.

@@ -5,7 +5,7 @@ Turns raw meeting transcripts into structured summaries, then pulls the owner's 
 ## Install
 
 ```
-/plugin install brain-summarise --marketplace YOUR-ORG/Claude-Second-Brain-OS
+/plugin install brain-summarise --marketplace Le-sommelier/Claude-Second-Brain-OS
 ```
 
 Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wired into your workspace.
