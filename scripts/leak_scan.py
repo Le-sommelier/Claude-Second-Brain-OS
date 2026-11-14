@@ -2,6 +2,7 @@
 """Scan the repo for leaked private terms before any commit or release.
 
     python3 scripts/leak_scan.py [--denylist .local/denylist.txt] [--path plugins/brain-core]
+    python3 scripts/leak_scan.py --secrets-only        # no denylist: generic secret patterns only (CI)
 
 Reads a denylist of literals (one per line, '#' comments), matches each
 case-insensitively on word boundaries across every text file (skipping .git and
@@ -65,6 +66,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--denylist", default=str(REPO / ".local" / "denylist.txt"))
     ap.add_argument("--path", default=".", help="sub-path of the repo to scan")
+    ap.add_argument("--secrets-only", action="store_true", help="skip the denylist; run the generic secret patterns only")
     args = ap.parse_args()
 
     denylist = Path(args.denylist).resolve()
@@ -72,7 +74,7 @@ def main() -> int:
         print("FAIL: the denylist is tracked by git — remove it from the index now.")
         return 1
 
-    terms = load_denylist(denylist)
+    terms = [] if args.secrets_only else load_denylist(denylist)
     term_re = [(i + 1, re.compile(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9])", re.I))
                for i, t in enumerate(terms)]
     secret_re = [(n, re.compile(p)) for n, p in SECRET_PATTERNS.items()]

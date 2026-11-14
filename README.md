@@ -88,9 +88,30 @@ nightly consolidation, weekly digest, and so on). Each job is registered only if
 Run `/brain-core:doctor` any time to check config, paths, modules, connectors and schedules.
 Installed a new module later? Re-run `/brain-core:setup`. It only adds what is new.
 
-**Requirements:** Claude Code, Python 3.11+, PyYAML. You also need the connectors for the
-sources you use: Slack, Microsoft 365, Atlassian. MCP tool names vary by install, so if a
+**Requirements:**
+
+- Claude Code.
+- Python 3.9 or later, with PyYAML: `python3 -m pip install pyyaml`. It is the only package to
+  install, and `/brain-core:doctor` tells you if it is missing.
+- The connectors for the sources you use: Slack, Microsoft 365, Atlassian.
+
+ MCP tool names vary by install, so if a
 skill asks for permission on its first run, allow the connector's read tools once.
+
+## What you provide by hand
+
+The automation only works on what you give it. Before the scheduled jobs are worth switching on,
+you have to tell the system who you are (`SOUL.md`, `BRAND.md`), which projects you run and who
+is on them, and what each source should watch: which Slack channels, which Confluence spaces.
+
+The growth module needs the most. It measures your work against a competency framework, and it
+has no idea what a product manager is at your company until you tell it. You paste in what is
+expected of your current position and of the next one, plus your company values and the shape
+of your review form. There is no connector for that, and until you do it the module works from
+a fictional company's framework.
+
+**[docs/what-you-provide.md](docs/what-you-provide.md) lists every manual input, module by module.**
+Setup copies a template for each one and never overwrites what you write.
 
 ## Your workspace
 
@@ -113,14 +134,56 @@ my-workspace/
 - **Every AI-written fact is dated, sourced and marked `by: ai`.** You confirm it, or it stays a proposal.
 - **Sections you fence with `<!-- human -->` are never rewritten.**
 
+## Why there is a database behind the markdown
+
+You only ever read and write markdown. So why does the system also keep a small database,
+`system/kb.db`?
+
+Because a project's history is a log. Every risk, decision and status update is appended with
+its date and source, and nothing is rewritten. After a few months those logs are long. To answer
+"what are the open risks on this project?", an agent reading plain files has to read the whole
+log and work out which entries are still true. That gets slower and more expensive every week.
+
+The database is an index over those files. `brain kb build` regenerates it from the markdown,
+and the agent asks it a question instead of reading everything.
+
+| | Reading the markdown directly | Asking the index |
+|---|---|---|
+| "Open risks on one project", after a year of history | reads the full logs, roughly 50,000 tokens | returns the few rows that are still open, roughly 500 tokens |
+| The same question across eight projects | too much to read in one go | one query |
+| The daily attention list (overdue, due soon, waiting on you) | a model has to read and judge | a fixed query, no model, same answer every time |
+| A badly written entry | goes unnoticed and misleads later | the build refuses it and names the file and line |
+| "How far can I trust this fact?" | a guess | computed from who was in the meeting and who is on the project team |
+
+The figures are orders of magnitude for a project with about 600 logged entries, not a
+benchmark. What they show: the cost of reading files grows with your history, while the cost of
+a query stays about the same.
+
+What it is not:
+
+- **Not a second source of truth.** It holds nothing the markdown doesn't. Delete it and the
+  next build recreates it.
+- **Not something you maintain.** The ingest pipeline rebuilds it on every run.
+- **Not mainly about speed.** Searching a few thousand files is already fast. The saving is in
+  what the model has to read, which is what you pay for and wait for.
+
+In the first weeks you will not notice it. It starts to matter once a project has a couple of
+months of history, or once you run more than two or three projects. It needs one Python package,
+PyYAML, to read the frontmatter of your files.
+
 ## How it stays safe
 
-- **Connectors are read-only.** No module posts, reacts, comments or edits in Slack, Teams or Confluence.
-- **Nothing publishes without a yes for that specific artifact.** Drafting is always fine.
+- **Ingest is read-only.** No ingest module posts, reacts, comments or edits in Slack, Teams or Confluence.
+- **One skill can write outside your machine: `publish-digest`.** It sends a digest to the Confluence
+  page, Slack channel or email recipients you configured, only after a yes for that specific digest.
+  It never runs on a schedule. Drafting is always fine.
+- **Ingested content is data, not instructions.** A Slack message, a Confluence page or a clipped
+  post that tells the agent to do something is recorded, not obeyed. See [SECURITY.md](SECURITY.md).
 - **Confidential stays local.** `growth/`, leadership channels and anything marked
   `sensitivity: confidential` are stored behind markers and never quoted into digests, the wiki or views.
-- **Unattended runs can't stall or wander.** Every scheduled command is a single allow-listed line,
-  and fetch bricks return stats only, so your messages never stream through the orchestrator.
+- **Unattended runs can't stall or wander.** Every skill runs single-line commands from its own
+  allow-listed scripts, and fetch bricks return stats only, so your messages never stream through
+  the orchestrator. The orchestrator itself runs only the commands listed in `system/run/pipeline.json`.
 - **Silent failure is the expensive kind.** Doctor and the weekly system review exist to fail loudly.
 
 ## The learning loop
@@ -138,6 +201,7 @@ The system proposes; only you legislate.
 ## Try it without your data
 
 ```bash
+python3 -m pip install pyyaml    # the one dependency
 cd examples/sample-workspace
 PATH="$PWD/../../plugins/brain-core/bin:$PATH" brain doctor
 PATH="$PWD/../../plugins/brain-core/bin:$PATH" brain kb build

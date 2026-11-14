@@ -29,4 +29,4 @@ Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wi
 
 **Scheduled tasks:** none proposed. The `one-on-ones` draft mode is registered as a `derive` brick, so the orchestrator runs it when installed. Pushing is always interactive.
 
-Scripts are stdlib Python 3.11+. See the [module contract](../../docs/module-contract.md).
+Scripts are stdlib Python 3.9+. See the [module contract](../../docs/module-contract.md).

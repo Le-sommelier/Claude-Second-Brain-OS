@@ -1,7 +1,7 @@
 {
-  "_comment": "Behaviour settings for brain-ingest-slack. timezone: IANA name used to file messages under their local posting date (null = owner.timezone from brainos.json). workspace_url builds permalinks from channel_id + ts (the Slack MCP returns none). flag_reaction: the emoji NAME you react with to flag a message for ingest (no colons). owner_slack_user_id: your own Slack user ID, used by ingest-owed-replies.",
+  "_comment": "Behaviour settings for brain-ingest-slack. timezone: IANA name used to file messages under their local posting date (null = owner.timezone from .claude/brain.json). workspace_url builds permalinks from channel_id + ts (the Slack MCP returns none). flag_reaction: the emoji NAME you react with to flag a message for ingest (no colons). owner_slack_user_id: your own Slack user ID, used by ingest-owed-replies.",
   "timezone": null,
-  "workspace_url": "https://fernhill.slack.com",
+  "workspace_url": "https://fernhill.example.slack.com",
   "flag_reaction": "inbox_tray",
   "owner_slack_user_id": "U0FERNHILL1",
   "include_bot_messages": false,

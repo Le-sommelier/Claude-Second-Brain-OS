@@ -18,7 +18,7 @@ Module rules for contributors: [`docs/module-contract.md`](../../docs/module-con
 Setup interviews you (name, role, company, timezone, modules, confidential patterns), shows
 every folder and file it will create, and writes only after you say yes. It never overwrites a
 file: templates are copied only when missing, and JSON config is merged add-only. Re-run it
-whenever you install or remove a module. Needs Python 3.11+ and PyYAML (`python3 -m pip install pyyaml`).
+whenever you install or remove a module. Needs Python 3.9 or later and PyYAML (`python3 -m pip install pyyaml`).
 
 ## How it's shaped
 

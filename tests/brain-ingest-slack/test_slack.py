@@ -37,7 +37,7 @@ class SlackBricks(unittest.TestCase):
         self.assertIn("wiki_processed: false", text)
         self.assertIn("message_count: 3", text)
         self.assertIn("thread_count: 1", text)
-        self.assertIn("> permalink: https://fernhill.slack.com/archives/C0FERN0001/p1793697240000100", text)
+        self.assertIn("> permalink: https://fernhill.example.slack.com/archives/C0FERN0001/p1793697240000100", text)
         self.assertIn("## 09:14 — Sam Patel", text)
         self.assertIn("### Thread (2 replies)", text)
         self.assertFalse((self.ws / "system/run/payloads/proj-checkout-2026-11-03.json").exists())
@@ -135,7 +135,7 @@ class SlackBricks(unittest.TestCase):
         data = json.loads(cfg.read_text())
         data["flag_reaction"] = "bookmark"
         cfg.write_text(json.dumps(data))
-        flagged = {"messages": [{"permalink": "https://fernhill.slack.com/archives/C0FERN0004/p1793811900000100",
+        flagged = {"messages": [{"permalink": "https://fernhill.example.slack.com/archives/C0FERN0004/p1793811900000100",
                                  "channel_name": "#product-leads", "author": "Morgan Diaz",
                                  "text": "Private planning note.", "signal_quality": "high"}]}
         (self.ws / "system/run/payloads/f.json").write_text(json.dumps(flagged))
@@ -152,9 +152,9 @@ class SlackBricks(unittest.TestCase):
 
     def test_owed_replies_digest(self):
         items = [
-            {"kind": "dm", "permalink": "https://fernhill.slack.com/archives/D1/p1", "channel": "DM", "author": "Sam Patel", "ts": "1793700000.0", "text": "Can you review the spec?"},
-            {"kind": "dm", "permalink": "https://fernhill.slack.com/archives/D1/p1", "channel": "DM", "author": "Sam Patel", "ts": "1793700000.0", "text": "dup"},
-            {"kind": "mention", "permalink": "https://fernhill.slack.com/archives/C0FERN0004/p2", "channel": "#product-leads", "author": "Riley Chen", "ts": "1793800000.0", "text": "Alex, thoughts on staffing?"},
+            {"kind": "dm", "permalink": "https://fernhill.example.slack.com/archives/D1/p1", "channel": "DM", "author": "Sam Patel", "ts": "1793700000.0", "text": "Can you review the spec?"},
+            {"kind": "dm", "permalink": "https://fernhill.example.slack.com/archives/D1/p1", "channel": "DM", "author": "Sam Patel", "ts": "1793700000.0", "text": "dup"},
+            {"kind": "mention", "permalink": "https://fernhill.example.slack.com/archives/C0FERN0004/p2", "channel": "#product-leads", "author": "Riley Chen", "ts": "1793800000.0", "text": "Alex, thoughts on staffing?"},
         ]
         (self.ws / "system/run/payloads/o.json").write_text(json.dumps(items))
         out = helpers.result(helpers.run("owed", self.ws, "--payload", "system/run/payloads/o.json", "--date", "2026-11-06"))

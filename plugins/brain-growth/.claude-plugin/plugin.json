@@ -2,6 +2,9 @@
   "name": "brain-growth",
   "version": "0.1.0",
   "description": "Career growth: mine evidence from your work against your framework, set objectives, check progress and draft self-reviews. Confidential by default.",
+  "author": {
+    "name": "Claude-Second-Brain-OS contributors"
+  },
   "license": "MIT",
   "dependencies": [
     "brain-core"

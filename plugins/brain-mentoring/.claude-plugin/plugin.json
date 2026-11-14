@@ -2,6 +2,9 @@
   "name": "brain-mentoring",
   "version": "0.1.0",
   "description": "Mentorships as mentor or mentee: set up, prep sessions, capture notes and actions, review progress. Confidential by default.",
+  "author": {
+    "name": "Claude-Second-Brain-OS contributors"
+  },
   "license": "MIT",
   "dependencies": [
     "brain-core"

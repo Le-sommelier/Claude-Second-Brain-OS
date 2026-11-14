@@ -28,4 +28,4 @@ growth/mentoring/casey-nguyen/
 
 `brain-growth`'s miner reads `growth/mentoring/` as a source of evidence (for example, a mentee stepping up), so mentoring shows up in your own growth record without you copying anything.
 
-Scripts are stdlib Python 3.11+. See the [module contract](../../docs/module-contract.md).
+Scripts are stdlib Python 3.9+. See the [module contract](../../docs/module-contract.md).

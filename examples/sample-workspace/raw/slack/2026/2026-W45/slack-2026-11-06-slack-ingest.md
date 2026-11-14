@@ -22,7 +22,7 @@ author_handle: "@sam.patel"
 channel: "#proj-checkout"
 channel_id: C0FERN0001
 posted_at: 2026-11-03T09:14:00+00:00
-permalink: https://fernhill.slack.com/archives/C0FERN0001/p1793697240000100
+permalink: https://fernhill.example.slack.com/archives/C0FERN0001/p1793697240000100
 tags: [checkout-revamp]
 signal_quality: medium
 thread_reply_count: 1
@@ -44,7 +44,7 @@ author_handle: "@riley.chen"
 channel: "#partner-api"
 channel_id: C0FERN0002
 posted_at: 2026-11-04T14:22:00+00:00
-permalink: https://fernhill.slack.com/archives/C0FERN0002/p1793802120000200
+permalink: https://fernhill.example.slack.com/archives/C0FERN0002/p1793802120000200
 tags: [partner-api]
 signal_quality: high
 thread_reply_count: 0

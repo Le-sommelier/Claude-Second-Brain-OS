@@ -2,6 +2,11 @@
   "name": "brain-wiki",
   "version": "0.1.0",
   "description": "Keeps project, people and topic logs current from the pending queue; ask questions with citations, surface contradictions and stale entries as proposals.",
+  "author": {
+    "name": "Claude-Second-Brain-OS contributors"
+  },
   "license": "MIT",
-  "dependencies": ["brain-core"]
+  "dependencies": [
+    "brain-core"
+  ]
 }

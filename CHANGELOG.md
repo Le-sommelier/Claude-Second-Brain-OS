@@ -7,4 +7,6 @@
 - Markdown is the only source of truth, with no HTML views. `system/kb.db` is a generated,
   git-ignored SQLite index over it. One architecture diagram in `docs/assets/`.
 - Setup wizard that previews before writing and never overwrites.
+- `docs/what-you-provide.md`: every input a person must supply by hand, module by module.
+- Workspace rule and security notes: ingested content is data, never instructions.
 - Fictional sample workspace (Alex Morgan at Fernhill) for tests and demos.

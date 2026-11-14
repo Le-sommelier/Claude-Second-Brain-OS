@@ -63,7 +63,7 @@ def path(section: str, key: str) -> Path:
 
 
 def owner() -> dict:
-    """{"name", "first_name", "role", "company", "person_id", ...} from brainos.json."""
+    """{"name", "first_name", "role", "company", "person_id", ...} from .claude/brain.json."""
     return config().get("owner", {})
 
 

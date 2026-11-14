@@ -2,6 +2,11 @@
   "name": "brain-steal-list",
   "version": "0.1.0",
   "description": "A nightly review of ideas you clipped from other people's AI setups: what to steal, adapt, watch or skip, judged against a map of your own setup. Nothing is built without your approval of a drafted plan.",
+  "author": {
+    "name": "Claude-Second-Brain-OS contributors"
+  },
   "license": "MIT",
-  "dependencies": ["brain-core"]
+  "dependencies": [
+    "brain-core"
+  ]
 }

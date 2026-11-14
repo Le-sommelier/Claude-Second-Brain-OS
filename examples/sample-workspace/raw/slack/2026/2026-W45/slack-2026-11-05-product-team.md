@@ -19,12 +19,12 @@ wiki_processed: false
 # #product-team — 2026-11-05
 
 ## 08:50 — Casey Nguyen
-> permalink: https://fernhill.slack.com/archives/C0FERN0003/p1793868600000100
+> permalink: https://fernhill.example.slack.com/archives/C0FERN0003/p1793868600000100
 
 Anyone have a good template for a one-page opportunity brief? Happy to share mine once it is done.
 
 ## 16:10 — Morgan Diaz
-> permalink: https://fernhill.slack.com/archives/C0FERN0003/p1793895000000200
+> permalink: https://fernhill.example.slack.com/archives/C0FERN0003/p1793895000000200
 
 Reminder: planning for the next half opens next Monday. Please have your top three bets in the planning doc by then.
 

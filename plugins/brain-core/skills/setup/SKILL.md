@@ -21,6 +21,9 @@ and an `--apply` mode that never overwrites. You never create workspace files by
   `${CLAUDE_PLUGIN_ROOT}/../..` (the plugin cache). If discovery finds none besides brain-core, ask
   the owner which modules they installed and pass them anyway: the plan lists any it can't find.
 
+- PyYAML is required. Tell the owner up front to run `python3 -m pip install pyyaml` if they
+  have not; `brain doctor` in step 8 reports it when it is missing.
+
 ## Steps
 
 1. **Interview**, one short question at a time, defaults in brackets. Skip any answer you already have.
@@ -57,9 +60,17 @@ and an `--apply` mode that never overwrites. You never create workspace files by
    using the prompt file's contents as the task prompt. Never register a task the owner didn't approve.
 7. **Connectors.** List `connectors` with `required: true` that the owner should enable, and how
    (Settings, Connectors). Don't test them here.
-8. **Finish.** Run `brain doctor` from the target and show its status. Then tell the owner the
-   three things to do next: fill in `SOUL.md` and `BRAND.md` (guided templates), list their first
-   project with `/brain-core:new-project`, and run the first ingest if brain-ingest is enabled.
+8. **Finish.** Run `brain doctor` from the target and show its status. Then tell the owner what
+   they still have to provide by hand, because nothing useful is automated before it:
+   - always: fill in `SOUL.md` and `BRAND.md` (guided templates), create the first project with
+     `/brain-core:new-project` and list its team in `teams.md`;
+   - per enabled module: the files that module's README lists under "You fill in" or "Configure"
+     (watched Slack channels, Confluence spaces, the org chart, the 1:1 roster, and so on);
+   - if brain-growth is enabled, say plainly that it is measuring against a fictional framework
+     until they paste in what their company expects of their current level and of the next one
+     (`growth/development/frameworks/`), their values and their review form.
+   Point them to `docs/what-you-provide.md` in the repository for the full list. Then suggest the
+   first ingest if brain-ingest is enabled.
 
 ## Outputs
 
@@ -82,5 +93,6 @@ templates, and `system/run/pipeline.json` (brain-ingest's base pipeline plus eve
 |---|---|
 | `answers are incomplete` | ask for the listed fields, rewrite the answers, re-plan |
 | `collisions: nothing written` | a module wants a path key the workspace already maps differently; show both values and ask which module to drop or which key to rename |
+| doctor: `PyYAML missing` | the owner runs `python3 -m pip install pyyaml`, then re-run doctor |
 | `module ... requested but not installed` | install it (`/plugin install <name>@claude-second-brain-os`), then re-run setup |
 | doctor reports `module roots no longer exist` after a plugin update | re-run setup with the same answers; it refreshes the roots |

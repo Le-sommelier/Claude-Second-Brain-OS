@@ -73,7 +73,7 @@
     {
       "name": "brain-steal-list",
       "source": "./plugins/brain-steal-list",
-      "description": "A nightly review of ideas you clipped from others' setups: what to steal, adapt or skip, with a dashboard."
+      "description": "A nightly review of ideas you clipped from others' setups: what to steal, adapt or skip, tracked on a markdown status board."
     },
     {
       "name": "brain-grill",
