@@ -1,6 +1,6 @@
 {
   "name": "claude-second-brain-os",
-  "description": "A modular second brain for product managers on Claude Code: ingest Slack, Teams, Confluence and notes; keep projects, stakeholders and growth in markdown; get digests, a learning loop and a nightly steal list.",
+  "description": "A modular foundation for a second brain on Claude Code, for any role: ingest Slack, Teams, Confluence and notes; keep projects, stakeholders and growth in markdown; get digests, a learning loop and a nightly steal list.",
   "owner": {
     "name": "Claude-Second-Brain-OS contributors"
   },

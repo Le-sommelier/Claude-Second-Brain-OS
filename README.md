@@ -1,11 +1,16 @@
 # Claude-Second-Brain-OS
 
-**A modular second brain for product managers, built on Claude Code.**
+**A modular foundation for a second brain, built on Claude Code.**
 
 It pulls your Slack, Teams meetings, Confluence pages and notes into plain markdown. It
 keeps your projects, stakeholders and career growth in a structure that compounds, and it
 hands you digests, an attention list and a nightly "steal list" of ideas worth adopting. You
 install only the modules you want.
+
+It was built and used daily by a senior product manager, so the examples look like a PM's week.
+But it is the foundation, not a PM toolkit: how sources get in, how knowledge is stored, how the
+agent remembers and what it may do without asking. Nothing in it is tied to product work. Add
+your own layer of skills on top for sales, marketing, engineering, operations or anything else.
 
 ![Architecture](docs/assets/architecture.svg)
 
@@ -23,7 +28,7 @@ interlinked markdown wiki that sits between you and your sources. Raw sources st
 the model owns the wiki, and a schema file sets the conventions. The work comes down to three
 operations: ingest, query and lint.
 
-Claude-Second-Brain-OS keeps that core and builds a working PM system on top of it:
+Claude-Second-Brain-OS keeps that core and builds a working system on top of it:
 
 | Karpathy's LLM Wiki | What this repo adds |
 |---|---|
@@ -105,7 +110,7 @@ you have to tell the system who you are (`SOUL.md`, `BRAND.md`), which projects 
 is on them, and what each source should watch: which Slack channels, which Confluence spaces.
 
 The growth module needs the most. It measures your work against a competency framework, and it
-has no idea what a product manager is at your company until you tell it. You paste in what is
+has no idea what your role means at your company until you tell it. You paste in what is
 expected of your current position and of the next one, plus your company values and the shape
 of your review form. There is no connector for that, and until you do it the module works from
 a fictional company's framework.

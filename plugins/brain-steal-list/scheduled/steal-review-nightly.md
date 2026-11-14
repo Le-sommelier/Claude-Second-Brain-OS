@@ -1,6 +1,6 @@
 # Scheduled task: brain-steal-review-nightly
 
-You are running the nightly steal review in the owner's PM workspace. The owner is not present.
+You are running the nightly steal review in the owner's workspace. The owner is not present.
 
 Run mode 1 (review) of the `steal` skill of the `brain-steal-list` plugin, exactly as written: `init_db.py`,
 `build_my_setup.py`, `sync_drive_inbox.py`, `list_inbox.py`, review each new screenshot (Read the image),

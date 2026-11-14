@@ -1,8 +1,8 @@
 # What you provide by hand
 
 The automation only works on what you give it. Ingest can fetch your Slack and your meetings on
-its own, but it can't know who you are, which channels matter, what your company expects of a
-product manager, or what you are trying to become. That part is manual, and it comes first.
+its own, but it can't know who you are, which channels matter, what your company expects of someone in
+your role, or what you are trying to become. That part is manual, and it comes first.
 
 This page lists every input a person has to supply, per module. Setup copies a template for each
 file and never overwrites it afterwards. **The templates describe a fictional company (Fernhill).
@@ -25,7 +25,7 @@ Until you replace them, the modules that read them produce fiction.**
 | Name, person ID, role, company, timezone | the setup interview → `.claude/brain.json` | The person ID ties you to meetings and project teams. The timezone sets the daily ingest window. |
 | Who you are, what you own, your audiences | `SOUL.md` | Read at the start of every session. Without it every draft is generic. |
 | Your voice, banned words, format defaults | `BRAND.md` | Used for digests, exec updates and any text written in your name. |
-| How you like to work | `RULES.md`, the fenced "Working preferences" block | The defaults suit most PMs. Edit what doesn't suit you. |
+| How you like to work | `RULES.md`, the fenced "Working preferences" block | The defaults suit most people. Edit what doesn't suit you. |
 | What counts as confidential | the setup interview → `.claude/brain.json → confidential` | Extra folders and Slack channel name patterns beyond the defaults. |
 | Your projects | `/brain-core:new-project <slug>`, then the project's `README.md` | Nothing is filed under a project that doesn't exist. |
 | Each project's team | `projects/<slug>/teams.md` (person IDs) | The trust tier of every fact is computed from who was in the room and who is on the team. An empty roster means low trust everywhere. |
@@ -57,13 +57,13 @@ Until you replace them, the modules that read them produce fiction.**
 ## Growth: the module that needs the most from you
 
 `brain-growth` looks for evidence of your impact in your meetings, decisions and digests, and
-measures it against a competency framework. **It has no idea what a product manager is at your
+measures it against a competency framework. **It has no idea what your role means at your
 company until you tell it.** There is no connector for this. You type or paste it in once, and
 you keep it current.
 
 | You provide | Where | What it is |
 |---|---|---|
-| The definition of your current level | `growth/development/frameworks/<level>.md` | What your company expects of a PM in your position: the skills, and under each skill the criteria. One file per level. |
+| The definition of your current level | `growth/development/frameworks/<level>.md` | What your company expects of someone in your position: the skills, and under each skill the criteria. One file per level. |
 | The definition of the next level | a second file in the same folder | What is expected of the position you are aiming for. The gap report, the objectives linter and the self-review all compare the two. With one level only, there is no gap to report. |
 | Which level you are at and which you target | `.claude/brain/growth/source-config.json → levels` | Must match the `level:` in the two framework files. |
 | Your company values | `.claude/brain/growth/values.json` | Used to tag evidence and to write the values paragraph of a self-review. |

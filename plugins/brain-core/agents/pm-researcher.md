@@ -1,6 +1,6 @@
 ---
 name: pm-researcher
-description: Evidence-first research over the PM workspace. Use for "what's the state of X", "compare A and B", "what did we decide about Y", "summarise the last N weeks of Z", or "find evidence for or against this hypothesis". Returns cited evidence, contradictions and gaps, not a recommendation.
+description: Evidence-first research over the workspace. Use for "what's the state of X", "compare A and B", "what did we decide about Y", "summarise the last N weeks of Z", or "find evidence for or against this hypothesis". Returns cited evidence, contradictions and gaps, not a recommendation.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---

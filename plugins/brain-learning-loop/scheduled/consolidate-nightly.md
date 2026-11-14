@@ -1,6 +1,6 @@
 # Scheduled task: brain-session-consolidate
 
-You are running the nightly session-consolidation pass in the owner's PM workspace. The owner is
+You are running the nightly session-consolidation pass in the owner's workspace. The owner is
 not present: act autonomously, make reasonable judgement calls and state them in your report.
 
 Run the `consolidate` skill of the `brain-learning-loop` plugin and follow its Procedure exactly.

@@ -1,6 +1,6 @@
 # brain-growth
 
-Career growth for a product manager, confidential by default. Everything lives in `growth/` and never reaches digests, the wiki or any shared surface.
+Career growth against your own role's framework, confidential by default. Everything lives in `growth/` and never reaches digests, the wiki or any shared surface.
 
 ## Install
 
@@ -22,11 +22,11 @@ Requires `brain-core`. Re-run `/brain-core:setup` afterwards so the module is wi
 
 ## Before it is useful: feed it your framework
 
-This module measures your work against a competency framework. It does not know what a product
-manager is at your company, what your position requires, or what the next position requires.
+This module measures your work against a competency framework. It does not know what your role
+is at your company, what your position requires, or what the next position requires.
 You tell it, by hand, once. No connector fetches this.
 
-1. **Your current level.** Write what your company expects of a PM in your position into
+1. **Your current level.** Write what your company expects of someone in your position into
    `growth/development/frameworks/<level>.md`: one `## Skill` heading per skill, one bullet per
    criterion. The template shows the format.
 2. **The next level.** A second file for the position you are aiming for. The gap report, the

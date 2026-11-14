@@ -8,7 +8,7 @@ after it has fired correctly 3 times in distinct sessions; new patterns live in 
 ## Working preferences (how {{OWNER_FIRST_NAME}} operates)
 
 <!-- human -->
-<!-- Edit these to match how you work. The defaults below suit most PMs. -->
+<!-- Edit these to match how you work. The defaults below suit most people. -->
 - **Move fast.** With enough context to act, act. Don't ask for confirmation on every step.
 - **One strong recommendation beats a list of options**, unless alternatives are asked for.
 - **Match length to the audience.** Exec: short. Team: can be longer.

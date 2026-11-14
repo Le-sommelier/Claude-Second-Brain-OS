@@ -3,7 +3,7 @@
 The required module of claude-second-brain-os. It creates and checks your workspace, ships the `brain`
 CLI every other module calls, keeps a SQLite index over your markdown, scaffolds projects,
 topics and people, injects your context at session start, and carries the rules, output styles
-and personas that make Claude behave like a PM's chief of staff instead of a chat window.
+and personas that make Claude behave like a chief of staff instead of a chat window.
 
 Module rules for contributors: [`docs/module-contract.md`](../../docs/module-contract.md).
 

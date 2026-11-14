@@ -1,6 +1,6 @@
 # Scheduled task: brain-system-review
 
-You are running the weekly system review in the owner's PM workspace, on a fixed cadence
+You are running the weekly system review in the owner's workspace, on a fixed cadence
 (Friday afternoon). The owner is not present.
 
 Run the `system-review` skill of the `brain-learning-loop` plugin and follow its Procedure exactly.

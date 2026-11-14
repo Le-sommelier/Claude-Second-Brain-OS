@@ -1,4 +1,4 @@
-# {{OWNER_FIRST_NAME}}'s PM workspace
+# {{OWNER_FIRST_NAME}}'s workspace
 
 {{OWNER_NAME}}'s product-management second brain ({{OWNER_ROLE}}, {{COMPANY}}), built on
 claude-second-brain-os. Read this file first.

@@ -2,7 +2,7 @@
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#667085"/></marker></defs>
 <rect width="1180" height="730" fill="#f6f7f9"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#1b2333" text-anchor="start">Claude-Second-Brain-OS</text>
-<text x="30" y="62" font-size="13" font-weight="400" fill="#667085" text-anchor="start">A modular second brain for product managers. Markdown is the source of truth; every module is a plugin.</text>
+<text x="30" y="62" font-size="13" font-weight="400" fill="#667085" text-anchor="start">A modular foundation for a second brain. Markdown is the source of truth; every module is a plugin.</text>
 <rect x="30" y="90" width="150" height="330" rx="10" fill="#ffffff" stroke="#d5dae3"/>
 <text x="44" y="114" font-size="13" font-weight="700" fill="#1b2333" text-anchor="start">1  Sources</text>
 <rect x="215" y="90" width="200" height="330" rx="10" fill="#ffffff" stroke="#d5dae3"/>
